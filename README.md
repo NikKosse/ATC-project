@@ -1,7 +1,7 @@
 ATC-project
 ===========
 
-Air Traffic Controller game with some edit as directed by Professor Guilliams.
+Air Traffic Controller game with some edits as directed by Professor Guilliams.
 
 Added content:
 
