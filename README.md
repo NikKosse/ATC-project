@@ -4,6 +4,7 @@ ATC-project
 Air Traffic Controller game with some edit as directed by Professor Guilliams.
 
 Added content:
+
 1. Fixed the way letters for planes display when they are at the top of the window.
 
 2. When an airplane launches, the airport it comes from is listed on the right.
