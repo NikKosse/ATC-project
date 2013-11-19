@@ -203,7 +203,7 @@ public class ATCUI_impl
     exitButton.setActionCommand("Exit");
     exitButton.addActionListener( this );
     exitButton.setFocusable( false ); // Don't steal Frame's focus
-    pauseButton = new JButton("Pause");	//NEW
+    pauseButton = new JButton("Pause");	//NEW, these next few lines add the button to the interface and prepare it for use in the program
     pauseButton.setActionCommand("Pause"); //NEW
     pauseButton.addActionListener(this); //NEW
     pauseButton.setFocusable(false);// Don't steal the Frame's focus, NEW
@@ -439,13 +439,13 @@ public class ATCUI_impl
   public void ready()
   {
     newButton.setEnabled( true );
-    pauseButton.setEnabled( false ); //NEW
+    pauseButton.setEnabled( false ); //NEW this makes the pause button unclickable until after the game is started
   }
 
   public void start()
   {
     newButton.setEnabled( false );
-    pauseButton.setEnabled( true ); //NEW
+    pauseButton.setEnabled( true ); //NEW this makes the pause button clickable once the game has started
     synchronized(this){
     if( ! keyListenerAdded )
     {
@@ -460,7 +460,7 @@ public class ATCUI_impl
     JOptionPane.showMessageDialog( null, gameOverMessage );
 
     newButton.setEnabled( true );
-    pauseButton.setEnabled( false ); //NEW
+    pauseButton.setEnabled( false ); //NEW this makes the pause button unclickable once the game is over
     synchronized(this){
     if( keyListenerAdded )
     {

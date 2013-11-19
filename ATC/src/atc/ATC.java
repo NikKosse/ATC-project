@@ -19,6 +19,7 @@
 package atc;
 
 import java.lang.Object;
+import java.util.TimerTask;
 import java.applet.Applet;
 import java.io.*;
 
@@ -67,9 +68,9 @@ public class ATC extends Applet
     stopATC();
   }
   
-  public void pause()
+  public void pause(boolean pause) 
   {
-	 // pauseAtc();
+	 data.setPause(pause);
   }
 
   /**
@@ -114,6 +115,7 @@ public class ATC extends Applet
   /**
    * Clean Data, Close UI, and remove everything.
    */
+  
   public synchronized void stopATC()
   {
     if( data != null )

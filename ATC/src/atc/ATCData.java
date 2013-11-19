@@ -67,6 +67,8 @@ public class ATCData extends Object
 
   ATCConfig config = null;
   ATCRecord record = null;
+  
+  boolean pause = false;
 
 
   protected ATCData() { super(); }
@@ -74,6 +76,11 @@ public class ATCData extends Object
   {
     super();
     atc_obj = a;
+  }
+  
+  public void setPause(boolean pause)
+  {
+	  this.pause = pause;
   }
 
   public void setConfig( ATCConfig conf )
@@ -157,6 +164,8 @@ public class ATCData extends Object
     atc_obj.getUI().refresh();
     atc_obj.getUI().ready();
   }
+  
+
 
   //Timer
   java.util.Timer timer = null;
@@ -201,6 +210,8 @@ public class ATCData extends Object
     task = new ATCTask( this );
     timer = new java.util.Timer();
     timer.scheduleAtFixedRate( task, 100, get_tick_ms() );
+    
+    
   }
     
   public void gameOver( String gameOverMessage )
@@ -297,9 +308,13 @@ public class ATCData extends Object
       atc_obj.getUI().PlaneNew( planes[plane_id] );
     } // end if
   }
+  
 
   public void tick() throws ATCGameOverException
   {
+	  
+	if (pause) return; //if pause is true, return.  Added by me.
+	
     tick_count++;
 
     int plane_id;

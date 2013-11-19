@@ -18,7 +18,7 @@ public class main{
   {
     WindowUtilities.setNativeLookAndFeel();
 
-    String game = args.length >= 1 ? args[0] : "default";
+    String game = args.length >= 1 ? args[0] : "easy";
     ATC atc = new ATC( game );
 
     atc.startATC();
